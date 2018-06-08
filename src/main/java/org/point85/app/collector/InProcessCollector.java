@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class InProcessCollector {
-	// private static final String LOG4J_PROPS = "log4j";
 	// logger
 	private static final Logger logger = LoggerFactory.getLogger(InProcessCollector.class);
 
@@ -40,6 +39,10 @@ public class InProcessCollector {
 		} catch (Exception e) {
 			collectorServer.onException("Startup failed. ", e);
 			collectorServer.shutdown();
+		}
+
+		if (logger.isInfoEnabled()) {
+			logger.info("Exiting main");
 		}
 	}
 }
