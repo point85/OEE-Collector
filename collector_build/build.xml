@@ -4,9 +4,8 @@
 	<!-- folders -->
 	<property name="repo.dir" value="C:\Users\Kent\.m2\repository"/>
 	<property name="source.dir" value="C:\dev\OEE-Collector"/>
-	<property name="dist.dir" value="build_dist"/>
-	<property name="archive.dir" value="dist"/>		
-	<property name="external.dir" value="externalLibs"/>
+	<property name="dist.dir" value="build_dist"/>	
+	<property name="external.dir" value="external_libs"/>
 	<property name="project.dir" value="project"/>
 	<property name="build.dir" value="build"/>
 		
@@ -47,11 +46,6 @@
 		</copy>
 		<copy todir="${project.dir}">
 			<fileset dir="${source.dir}">
-				<include name="src\test\java/**" />
-			</fileset>
-		</copy>
-		<copy todir="${project.dir}">
-			<fileset dir="${source.dir}">
 				<include name="src\main\java/**" />
 			</fileset>
 		</copy>
@@ -73,11 +67,6 @@
 		
 		<!-- Copy project sources  -->
 		<copy todir="${build.dir}/src">
-			<fileset dir="${project.dir}/src/test/java">
-				<include name="**/*"/>
-			</fileset>
-		</copy>
-		<copy todir="${build.dir}/src">
 			<fileset dir="${project.dir}/src/main/resources">
 				<include name="**/*"/>
 			</fileset>
@@ -98,18 +87,6 @@
 		</javac>
 	</target>
 	
-	<!-- Copy files for zip -->
-	<target name="copy-files">		
-		<!-- copy wrapper files -->
-		<copy todir="${dist.dir}/wrapper">
-			<fileset dir="../wrapper">
-				<include name="**/*" />
-			</fileset>
-		</copy>
-			
-		<copy file="../config/logging/log4j.properties" todir="${dist.dir}/config/logging"/>
-	</target>
-	
 	<!-- build collector jar -->
 	<target name="collector-jar" depends="compile">
 		<delete dir="${dist.dir}"/>
@@ -125,13 +102,25 @@
 		
 		<jar destfile="${dist.dir}/oee-collector-1.0.0.jar" basedir="${build.dir}/classes"/>
 	</target>
+		
+	<!-- Copy files for zip -->
+	<target name="copy-files">		
+		<!-- copy wrapper files -->
+		<copy todir="${dist.dir}/wrapper">
+			<fileset dir="../wrapper">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		
+		<!-- delete lib dir -->
+		<delete dir="${dist.dir}/lib"/>
+	</target>
 	
 	<!-- clean up -->
 	<target name="clean">
 		<delete dir="${build.dir}" />
 		<delete dir="${dist.dir}" />
 		<delete dir="${external.dir}" />
-		<delete dir="${archive.dir}" />
 	</target>	
 	
 	<!-- build everything -->
