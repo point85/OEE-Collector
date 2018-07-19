@@ -1,12 +1,15 @@
 package org.point85.app.collector;
 
 import org.apache.log4j.PropertyConfigurator;
-import org.point85.domain.DomainUtils;
 import org.point85.domain.collector.CollectorService;
 import org.point85.domain.persistence.PersistenceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Class for Java Service Wrapper's entry point to the {@link CollectorService}
+ *
+ */
 public class InProcessCollector {
 	// logger
 	private static final Logger logger = LoggerFactory.getLogger(InProcessCollector.class);
@@ -17,11 +20,8 @@ public class InProcessCollector {
 
 	// main method is executed by the Java Service Wrapper
 	public static void main(String[] args) {
-		// configuration folder
-		String configDir = System.getProperty(DomainUtils.CONFIG_DIR);
-
 		// configure log4j
-		PropertyConfigurator.configure(configDir + "/logging/log4j.properties");
+		PropertyConfigurator.configure("../../config/logging/log4j.properties");
 
 		// create the EMF
 		if (logger.isInfoEnabled()) {
