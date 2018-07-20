@@ -1,2 +1,3 @@
-rem build collector
-ant -f ./collector_build/build.xml build-all
+rem build data collector jar
+call mvn clean
+call mvn package
