@@ -21,7 +21,7 @@ public class InProcessCollector {
 	// main method is executed by the Java Service Wrapper
 	public static void main(String[] args) {
 		// configure log4j
-		PropertyConfigurator.configure("../../config/logging/log4j.properties");
+		PropertyConfigurator.configure("../../../config/logging/log4j.properties");
 
 		// create the EMF
 		if (logger.isInfoEnabled()) {
