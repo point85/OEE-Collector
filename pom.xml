@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -137,7 +137,7 @@
 <dependency>
     <groupId>org.point85</groupId>
     <artifactId>oee-domain</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 
 </dependencies>
