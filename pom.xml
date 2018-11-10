@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.1</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -76,7 +76,7 @@
 <dependency>
     <groupId>org.eclipse.milo</groupId>
     <artifactId>sdk-client</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.4</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
@@ -92,7 +92,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-hikaricp</artifactId>
-    <version>5.3.1.Final</version>
+    <version>5.3.7.Final</version>
 </dependency>
 
 <!-- LOGGING -->
@@ -122,7 +122,7 @@
 <dependency>
     <groupId>com.rabbitmq</groupId>
     <artifactId>amqp-client</artifactId>
-    <version>5.2.0</version>
+    <version>5.5.0</version>
 </dependency>
 
 <!-- DATABASE -->
