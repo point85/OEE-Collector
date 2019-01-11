@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
    
   <properties>
-  	<domain.version>1.4.0</domain.version>
+  	<domain.version>1.4.1</domain.version>
   	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -12,7 +12,7 @@
 
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>1.4.0</version>
+  <version>1.4.1</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -103,7 +103,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-hikaricp</artifactId>
-    <version>5.4.0.Final</version>
+    <version>5.3.7.Final</version>
 </dependency>
 
 <!-- LOGGING -->
