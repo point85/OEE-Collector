@@ -23,12 +23,19 @@ public class InProcessCollector {
 		// configure log4j
 		PropertyConfigurator.configure("../../../config/logging/log4j.properties");
 
+		if (args.length < IDX_USER) {
+			logger.error("The application, jdbc connection string and user name must be specified.");
+			return;
+		}
+
+		String password = args.length > IDX_PASSWORD ? args[IDX_PASSWORD] : null;
+
 		// create the EMF
 		if (logger.isInfoEnabled()) {
 			logger.info("Initializing persistence service with args: " + args[IDX_JDBC] + ", " + args[IDX_USER] + ", "
-					+ args[IDX_PASSWORD]);
+					+ password);
 		}
-		PersistenceService.instance().initialize(args[IDX_JDBC], args[IDX_USER], args[IDX_PASSWORD]);
+		PersistenceService.instance().initialize(args[IDX_JDBC], args[IDX_USER], password);
 
 		// create the collector service
 		CollectorService collectorServer = new CollectorService();
@@ -42,7 +49,7 @@ public class InProcessCollector {
 		}
 
 		if (logger.isInfoEnabled()) {
-			logger.info("Exiting main");
+			logger.info("Startup finished successfully.");
 		}
 	}
 }
