@@ -17,6 +17,7 @@ public class InProcessCollector {
 	private static final int IDX_JDBC = 0;
 	private static final int IDX_USER = 1;
 	private static final int IDX_PASSWORD = 2;
+	private static final int IDX_COLLECTOR = 3;
 
 	// main method is executed by the Java Service Wrapper
 	public static void main(String[] args) {
@@ -37,15 +38,18 @@ public class InProcessCollector {
 		}
 		PersistenceService.instance().initialize(args[IDX_JDBC], args[IDX_USER], password);
 
+		// collector name
+		String collectorName = args.length > IDX_COLLECTOR ? args[IDX_COLLECTOR] : null;
+
 		// create the collector service
-		CollectorService collectorServer = new CollectorService();
+		CollectorService collectorService = new CollectorService(collectorName);
 
 		try {
 			// start server
-			collectorServer.startup();
+			collectorService.startup();
 		} catch (Exception e) {
-			collectorServer.onException("Startup failed. ", e);
-			collectorServer.shutdown();
+			collectorService.onException("Startup failed. ", e);
+			collectorService.shutdown();
 		}
 
 		if (logger.isInfoEnabled()) {
