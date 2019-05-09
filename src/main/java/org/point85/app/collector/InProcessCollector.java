@@ -1,6 +1,7 @@
 package org.point85.app.collector;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.point85.domain.DomainUtils;
 import org.point85.domain.collector.CollectorService;
 import org.point85.domain.persistence.PersistenceService;
 import org.slf4j.Logger;
@@ -23,6 +24,10 @@ public class InProcessCollector {
 	public static void main(String[] args) {
 		// configure log4j
 		PropertyConfigurator.configure("../../../config/logging/log4j.properties");
+		
+		if (logger.isInfoEnabled()) {
+			logger.info("JVM: " + DomainUtils.getJVMInfo());
+		}
 
 		if (args.length < IDX_USER) {
 			logger.error("The application, jdbc connection string and user name must be specified.");
