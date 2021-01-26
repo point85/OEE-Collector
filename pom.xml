@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
    
   <properties>
-  	<domain.version>3.3.0</domain.version>
+  	<domain.version>3.3.1</domain.version>
   	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,7 +11,7 @@
   
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>3.3.0</version>
+  <version>3.3.1</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
