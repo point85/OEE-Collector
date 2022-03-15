@@ -3,15 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
    
   <properties>
-  	<domain.version>3.5.1</domain.version>
-  	<maven.compiler.source>1.8</maven.compiler.source>
-	<maven.compiler.target>1.8</maven.compiler.target>
+  	<domain.version>3.6.0</domain.version>
+  	<maven.compiler.source>11</maven.compiler.source>
+	<maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <slf4j.version>1.7.32</slf4j.version>
   </properties>
   
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>3.5.1</version>
+  <version>3.6.0</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -35,14 +36,14 @@
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-log4j12</artifactId>
-    <version>1.7.25</version>
+    <version>${slf4j.version}</version>
 </dependency>
  
 <!-- https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j -->
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>jul-to-slf4j</artifactId>
-    <version>1.7.25</version>
+    <version>${slf4j.version}</version>
 </dependency>
 
 <!-- SQL Server DATABASE -->
@@ -73,7 +74,7 @@
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.2.8</version>
+    <version>42.3.3</version>
 </dependency>
 
 <!-- HSQLDB DATABASE -->
@@ -91,13 +92,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.8.1</version>
         <configuration>
           <executable>${JAVA_HOME}/bin/javac</executable>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>11</source>
+          <target>11</target>
         </configuration>
-      </plugin>
+      </plugin>      
     </plugins>
   </build>
   

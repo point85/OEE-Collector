@@ -2,7 +2,7 @@
 setlocal
 
 rem
-rem Copyright (c) 1999, 2018 Tanuki Software, Ltd.
+rem Copyright (c) 1999, 2020 Tanuki Software, Ltd.
 rem http://www.tanukisoftware.com
 rem All rights reserved.
 rem
@@ -16,7 +16,7 @@ rem
 
 rem -----------------------------------------------------------------------------
 rem These settings can be modified to fit the needs of your application
-rem Optimized for use with version 3.5.37 of the Wrapper.
+rem Optimized for use with version 3.5.43 of the Wrapper.
 
 rem The base name for the Wrapper binary.
 set _WRAPPER_BASE=wrapper
@@ -117,13 +117,13 @@ if [%_WRAPPER_CONF_OVERRIDE%]==[true] (
     set _WRAPPER_CONF="%~f1"
     if not [%_WRAPPER_CONF%]==[""] (
         shift
-        goto :startup
+        goto callcommand
     )
 )
 set _WRAPPER_CONF="%_WRAPPER_CONF_DEFAULT:"=%"
 
 rem The command should not be called inside a IF, else errorlevel would be 0
-if not [%_CHECK_LIC_BITS%]==[true] goto startup
+if not [%_CHECK_LIC_BITS%]==[true] goto callcommand
 %_WRAPPER_EXE% --request_delta_binary_bits %_WRAPPER_CONF% > nul 2>&1
 if %errorlevel% equ 32 (
     set _LIC32_OS64=true
@@ -132,11 +132,13 @@ if %errorlevel% equ 32 (
 )
 
 rem
-rem Start the Wrapper
+rem Run the Wrapper
 rem
-:startup
+:callcommand
 if not [%1]==[] (
-    echo WARNING: Extra arguments will be ignored. Please check usage in the batch file.
+    echo Additional arguments are not allowed.
+    pause
+    goto :eof
 )
 
 %_WRAPPER_EXE% -r %_WRAPPER_CONF%
