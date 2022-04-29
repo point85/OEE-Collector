@@ -1,6 +1,5 @@
 package org.point85.app.collector;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.point85.domain.DomainUtils;
 import org.point85.domain.collector.CollectorService;
 import org.point85.domain.persistence.PersistenceService;
@@ -22,9 +21,6 @@ public class InProcessCollector {
 
 	// main method is executed by the Java Service Wrapper
 	public static void main(String[] args) {
-		// configure log4j
-		PropertyConfigurator.configure("../../../config/logging/log4j.properties");
-		
 		if (logger.isInfoEnabled()) {
 			logger.info("JVM: " + DomainUtils.getJVMInfo());
 		}

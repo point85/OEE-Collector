@@ -3,16 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
    
   <properties>
-  	<domain.version>3.6.0</domain.version>
+  	<domain.version>3.7.0</domain.version>
   	<maven.compiler.source>11</maven.compiler.source>
 	<maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <slf4j.version>1.7.32</slf4j.version>
+	<log4j2.version>2.17.2</log4j2.version>
   </properties>
   
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>3.6.0</version>
+  <version>3.7.0</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -25,25 +25,25 @@
 </dependency>
 
 <!-- LOGGING -->
-<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>${log4j2.version}</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 <dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j12</artifactId>
-    <version>${slf4j.version}</version>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>${log4j2.version}</version>
 </dependency>
- 
-<!-- https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j -->
+
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
 <dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>jul-to-slf4j</artifactId>
-    <version>${slf4j.version}</version>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>${log4j2.version}</version>
 </dependency>
 
 <!-- SQL Server DATABASE -->
