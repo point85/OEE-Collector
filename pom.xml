@@ -3,16 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
    
   <properties>
-  	<domain.version>3.10.2</domain.version>
+  	<domain.version>3.10.3</domain.version>
   	<maven.compiler.source>11</maven.compiler.source>
 	<maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<log4j2.version>2.21.1</log4j2.version>
+	<log4j2.version>2.23.0</log4j2.version>
   </properties>
   
   <groupId>org.point85</groupId>
   <artifactId>oee-collector</artifactId>
-  <version>3.10.2</version>
+  <version>3.10.3</version>
   <name>In-process data collector</name>
   <description>Executed by Java Service Wrapper</description>
   
@@ -66,7 +66,7 @@
 <dependency>
     <groupId>com.mysql</groupId>
     <artifactId>mysql-connector-j</artifactId>
-    <version>8.1.0</version>
+    <version>8.3.0</version>
 </dependency>
 
 <!-- PostgresQL DATABASE -->
@@ -74,7 +74,7 @@
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.6.0</version>
+    <version>42.7.2</version>
 </dependency>
 
 <!-- HSQLDB DATABASE -->
